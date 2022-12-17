@@ -55,4 +55,4 @@ def sensitivity(text, temperature=0, max_tokens=1, top_p=0, logprobs=10):
 
     return output
 
-print(text_davinci("thirukural"))
+print(text_davinci("translate to english: இன்றைய தேதி என்ன"))

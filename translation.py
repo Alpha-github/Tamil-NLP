@@ -1,11 +1,8 @@
 import requests
 import os
-from tamil import utf8
-string = u"எஃகு"
-letters = utf8.get_letters(string)
-print(letters)
-for letter in letters:
-    print(letter)
+from urllib.parse import quote
+import json
+
 
 
 url = "https://google-translate1.p.rapidapi.com/language/translate/v2"
@@ -17,11 +14,21 @@ headers = {
 }
 
 def english_tamil(text):
-    long_list_of_words = text.split(' ')
-    url_encoded_text = f"q={'%20'.join(long_list_of_words)}"
+    s = quote(text)
+    url_encoded_text = f"q={s}"
     payload = url_encoded_text+"&target=ta&source=en"
 
     response = requests.request("POST", url, data=payload, headers=headers)
-    print(response.text.encode('utf-8'))
+    return response.text.encode('utf-8')
 
-# english_tamil("Hello")
+def tamil_english(text):
+    s = quote(text)
+    url_encoded_text = f"q={s}"
+    payload = url_encoded_text+"&target=en&source=ta"
+
+    response = requests.request("POST", url, data=payload, headers=headers)
+    print("in")
+    return(response.text['data'])
+
+a = "நன்றி வருகிறேன்"
+print(tamil_english(a))
