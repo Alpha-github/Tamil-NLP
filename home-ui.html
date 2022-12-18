@@ -3,22 +3,27 @@
 <head>
   <style>
     /* Add some style to the chatbot UI */
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: Arial, sans-serif;
+    }
     .chatbot {
-      width: 400px;
-      height: 500px;
-      background-color: #F8F8F8;
-      border: 1px solid #CCCCCC;
-      border-radius: 5px;
-      overflow-y: scroll;
-      padding: 10px;
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      display: flex;
+      flex-direction: column;
     }
     .chatbot-header {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
       background-color: #CCCCCC;
       border-radius: 5px 5px 0 0;
       padding: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
     }
     .chatbot-header h1 {
       margin: 0;
@@ -33,9 +38,12 @@
       cursor: pointer;
     }
     .chatbot-conversation {
+      flex: 1;
+      overflow-y: scroll;
       display: flex;
       flex-direction: column;
       align-items: flex-start;
+      padding: 10px;
     }
     .chatbot-conversation .message {
       margin-bottom: 10px;
@@ -62,6 +70,7 @@
       display: flex;
       align-items: center;
       margin-top: 10px;
+      padding: 0 10px;
     }
     .chatbot-input input[type="text"] {
       flex: 1;
@@ -86,9 +95,5 @@
 <body>
   <div class="chatbot">
     <div class="chatbot-header">
-      <h1>Chatbot</h1>
-      <button>Close</button>
-    </div>
-    <div class="chatbot-conversation">
-      <div class="message bot">
-        <p>Hello! How can
+      <h1>Tamil Talk</h1>
+     
