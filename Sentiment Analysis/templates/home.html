@@ -10,10 +10,10 @@
           </div>
         </div>
       </form>
-    {% if result>0.5 %}
-    😊
-    {% else %}
-    😢
-    {% endif %}
+      {% if result >0.5 %}
+        <h3 class = "text-center">Feeling Positve , Stay Motivated <span class="badge bg-success">Positive</span></h3>
+      {% else %}
+        <h3 class = "text-center">Feeling Negative , Stay Motivated <span class="badge bg-danger">Negative</span></h3>
+      {% endif %}
 </div>
 {% endblock %}

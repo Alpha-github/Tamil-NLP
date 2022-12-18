@@ -1,4 +1,4 @@
-from flask import Flask, render_template, request
+from flask import Flask,flash,render_template, request
 from helper import *
 from translation import *
 app = Flask(__name__)
