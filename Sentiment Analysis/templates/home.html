@@ -1,0 +1,19 @@
+{% extends 'index.html' %}
+{% block content %}
+<div class = 'container'>
+    <form method = "POST" >
+        <div class="form-group">
+          <label for="exampleFormControlInput1">Text</label>
+          <input type="text" class="form-control" id="exampleFormControlInput1"name =  "text" placeholder="Type your text">
+          <div class = "py-2">
+            <button type = "submit" class = "btn btn-primary">Submit</button>
+          </div>
+        </div>
+      </form>
+    {% if result>0.5 %}
+    😊
+    {% else %}
+    😢
+    {% endif %}
+</div>
+{% endblock %}
