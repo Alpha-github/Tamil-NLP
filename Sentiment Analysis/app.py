@@ -8,10 +8,13 @@ def index_view():
 
 @app.route('/', methods=['POST'])
 def my_form_post():
-    text = request.form['text']
-    processed_text = tamil_english_rapid(text)
-    print(processed_text)
-    result_text = predict_review([processed_text])
-    return render_template('home.html',result = result_text)
+    try:
+        text = request.form['text']
+        processed_text = tamil_english_translo(text)
+        result_text = predict_review([processed_text])
+        return render_template('home.html',result = result_text[0])
+    except:
+        result_text = None
+        return render_template('home.html',result = result_text)
 if __name__ == '__main__':
     app.run(debug=True, port=8000)

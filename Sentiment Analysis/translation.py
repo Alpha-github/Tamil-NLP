@@ -72,6 +72,7 @@ def tamil_english_rapid(text):
         "X-RapidAPI-Host": "rapid-translate-multi-traduction.p.rapidapi.com"
     }
     response = requests.request("POST", url, json=payload, headers=headers)
+    print(response.text)
     return(json.loads(response.text)[0])
 
 def english_tamil_translo(text):
@@ -98,7 +99,7 @@ def tamil_english_translo(text):
     payload = "from=ta&to=en&text="+s
     headers = {
         "content-type": "application/x-www-form-urlencoded",
-        "X-RapidAPI-Key": os.getenv("X-RapidAPI-Key"),
+        "X-RapidAPI-Key": 'ec710db6e0msh09051ac0e88c23ap18a531jsn9a7186571b67',
         "X-RapidAPI-Host": "translo.p.rapidapi.com"
     }
     response = requests.request("POST", url, data=payload, headers=headers)
