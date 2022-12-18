@@ -99,7 +99,7 @@ def tamil_english_translo(text):
     payload = "from=ta&to=en&text="+s
     headers = {
         "content-type": "application/x-www-form-urlencoded",
-        "X-RapidAPI-Key": 'ec710db6e0msh09051ac0e88c23ap18a531jsn9a7186571b67',
+        "X-RapidAPI-Key": '50ed35888dmsh7b9f97811845deep17d40ajsn4d687a48e943',
         "X-RapidAPI-Host": "translo.p.rapidapi.com"
     }
     response = requests.request("POST", url, data=payload, headers=headers)

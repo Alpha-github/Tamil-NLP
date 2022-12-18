@@ -9,7 +9,7 @@ def index_view():
 @app.route('/', methods=['POST'])
 def my_form_post():
     try:
-        text = request.form['text']
+        text = str(request.form.get('input_text'))
         processed_text = tamil_english_translo(text)
         result_text = predict_review([processed_text])
         return render_template('home.html',result = result_text[0])
